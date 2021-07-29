@@ -9,7 +9,7 @@ const FooterStyle = styled.footer`
   justify-content: center;
   align-items: center;
 
-  .p {
+  .p-text {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,7 +23,7 @@ const FooterStyle = styled.footer`
 export default function Footer() {
   return (
     <FooterStyle>
-      <p>
+      <p className="p-text">
         Made with <FontAwesomeIcon icon={['fas', 'coffee']} className="icon w-auto mx-1" /> and{' '}
         <FontAwesomeIcon icon={['fas', 'heart']} className="icon w-auto mx-1" />
       </p>
