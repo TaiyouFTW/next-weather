@@ -6,7 +6,10 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: url('../background-grey.jpg') no-repeat center center fixed;
+    background: url('../background-grey.jpg') no-repeat;
+    background-size: cover;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-weight: bold;
   }
 `
 

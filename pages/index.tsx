@@ -3,32 +3,19 @@ import Footer from '../components/footer';
 import styled from 'styled-components';
 import React from 'react';
 import { Weather, Results, Forecast } from './../interfaces/weather';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { IconName } from '@fortawesome/fontawesome-common-types';
+import WeatherCard from '../components/wheaterCard';
 
 const Main = styled.main`
  min-height: calc(100vh - 64px);
-`;
-
-const WeatherCard = styled.div`
-  background: rgb(255 255 255 / 40%);
-  -webkit-box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
-  box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
-  :hover {
-    -webkit-box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
-  }
-
-  .card-icon {
-    height: 5em;
-  }
+ .white-text {
+   color: #fff;
+ }
 `;
 
 type Storage = {
   weather: Weather;
   date: Date;
 }
-
 
 export default function Home() {
   const [weather, setWeather] = React.useState({} as Weather);
@@ -78,27 +65,20 @@ export default function Home() {
 
   return (
     <Main>
-      <div className="container pt-3">
-        <h2 className="text-white">{weatherResults.city_name}</h2>
-        <p className="text-white"> {weatherResults.temp + ' ºC'}</p>
+      <section className="container pt-3">
+        <h2 className="white-text">{weatherResults.city_name}</h2>
+        <p className="white-text"> {weatherResults.temp + ' ºC'}</p>
 
         <div className="row justify-content-center">
-          {weatherForecast.map((forecast) => {
+          {weatherForecast.map((forecast: Forecast) => {
             return (
               <div className="col-6 col-sm-4 col-md-2 my-3" key={forecast.id}>
-                <WeatherCard className="rounded-3 py-4 px-4">
-                  <FontAwesomeIcon icon={forecast.condition !== null ? forecast.condition as IconName : 'circle'} className="card-icon w-auto mx-auto d-block pb-3" />
-                  <p className="text-center mb-3">{forecast.date}</p>
-                  <div className="d-flex justify-content-around mb-3">
-                    <span className="text-center">Min <br />{forecast.min + ' ºC'}</span>
-                    <span className="text-center">Max <br />{forecast.max + ' ºC'}</span>
-                  </div>
-                </WeatherCard>
+                <WeatherCard forecast={forecast}></WeatherCard>
               </div>
             );
           })}
         </div>
-      </div>
+      </section>
     </Main>
   );
 }

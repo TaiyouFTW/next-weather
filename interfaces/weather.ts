@@ -34,7 +34,3 @@ export interface Forecast {
   description: string;
   condition: string;
 }
-
-export interface SimplifiedWeather {
-
-}
