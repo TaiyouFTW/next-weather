@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { createGlobalStyle, ThemeProvider } from 'styled-components'
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -11,13 +11,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     font-weight: bold;
   }
-`
-
-const theme = {
-  colors: {
-    primary: '#0070f3',
-  },
-}
+`;
 
 export default function Layout({ children }: any) {
   return (
@@ -26,6 +20,21 @@ export default function Layout({ children }: any) {
         <title>Weather</title>
         <meta name="description" content="weather app" />
         <link rel="icon" href="/favicon.ico" />
+        <title>Weather</title>
+        <meta name="title" content="Weather" />
+        <meta name="description" content="Weather forecast for training purpose" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://weather-ebon-psi.vercel.app/" />
+        <meta property="og:title" content="Weather" />
+        <meta property="og:description" content="Weather forecast for training purpose" />
+        <meta property="og:image" content="/background-grey.jpg" />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://weather-ebon-psi.vercel.app/" />
+        <meta property="twitter:title" content="Weather" />
+        <meta property="twitter:description" content="Weather forecast for training purpose" />
+        <meta property="twitter:image" content="/background-grey.jpg" />
       </Head>
       <GlobalStyle />
       <main>{children}</main>
