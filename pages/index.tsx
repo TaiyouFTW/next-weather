@@ -6,16 +6,16 @@ import { Weather, Results, Forecast } from './../interfaces/weather';
 import WeatherCard from '../components/wheaterCard';
 
 const Main = styled.main`
- min-height: calc(100vh - 64px);
- .white-text {
-   color: #fff;
- }
+  min-height: calc(100vh - 64px);
+  .white-text {
+    color: #fff;
+  }
 `;
 
 type Storage = {
   weather: Weather;
   date: Date;
-}
+};
 
 export default function Home() {
   const [weather, setWeather] = React.useState({} as Weather);
@@ -47,20 +47,19 @@ export default function Home() {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-      }
-    })
-      .then(async (response) => {
-        const data = await response.json();
-        const updatedWeather = data as Weather;
-        setWeather(updatedWeather);
-        setWeatherResults(updatedWeather.results);
-        setWeatherForecast(updatedWeather.results.forecast);
-        let storage = {
-          weather: updatedWeather,
-          date: new Date()
-        } as Storage;
-        localStorage.setItem('weather', JSON.stringify(storage));
-      })
+      },
+    }).then(async (response) => {
+      const data = await response.json();
+      const updatedWeather = data as Weather;
+      setWeather(updatedWeather);
+      setWeatherResults(updatedWeather.results);
+      setWeatherForecast(updatedWeather.results.forecast);
+      let storage = {
+        weather: updatedWeather,
+        date: new Date(),
+      } as Storage;
+      localStorage.setItem('weather', JSON.stringify(storage));
+    });
   }
 
   return (

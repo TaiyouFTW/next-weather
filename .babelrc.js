@@ -1,28 +1,25 @@
 module.exports = {
-  "presets": [
-    "next/babel",
-    "@babel/preset-typescript"
-  ],
-  "plugins": [
+  presets: ['next/babel', '@babel/preset-typescript'],
+  plugins: [
     [
-      "styled-components",
+      'styled-components',
       {
-        "ssr": true,
-        "displayName": true
-      }
-    ]
+        ssr: true,
+        displayName: true,
+      },
+    ],
   ],
-  "env": {
-    "test": {
-      "plugins": [
+  env: {
+    test: {
+      plugins: [
         [
-          "styled-components",
+          'styled-components',
           {
-            "ssr": false,
-            "displayName": false
-          }
-        ]
-      ]
-    }
-  }
-}
+            ssr: false,
+            displayName: false,
+          },
+        ],
+      ],
+    },
+  },
+};

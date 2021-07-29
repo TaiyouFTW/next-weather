@@ -10,7 +10,7 @@ export default async function WeatherAndForecast(request: NextApiRequest, respon
       url = 'https://api.hgbrasil.com/weather??woeid=449648';
     }
     const fetchWeather = await fetch(url);
-    const weather = await fetchWeather.json() as Weather;
+    const weather = (await fetchWeather.json()) as Weather;
     weather.results.condition_slug = Slug(weather.results.condition_slug);
     for (let i = 0; i < weather.results.forecast.length; i++) {
       weather.results.forecast[i].id = i.toString();
