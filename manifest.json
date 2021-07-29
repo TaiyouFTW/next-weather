@@ -1,0 +1,16 @@
+{
+  "name": "Guilherme Moreira",
+  "short_name": "Gui",
+  "icons": [
+    {
+      "src": "/public/favicon.ico",
+      "type": "image/ico",
+      "sizes": "32x32"
+    }
+  ],
+  "background_color": "#ffffff",
+  "description": "Weather app",
+  "display": "fullscreen",
+  "start_url": "/",
+  "theme_color": "#ffffff"
+}

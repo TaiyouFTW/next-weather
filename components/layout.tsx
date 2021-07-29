@@ -18,23 +18,25 @@ export default function Layout({ children }: any) {
     <>
       <Head>
         <title>Weather</title>
-        <meta name="description" content="weather app" />
+        <meta name="description" content="Weather app" />
         <link rel="icon" href="/favicon.ico" />
-        <title>Weather</title>
+        <link rel="manifest" href="/manifest.json" />
+
         <meta name="title" content="Weather" />
-        <meta name="description" content="Weather forecast for training purpose" />
+        <meta name="description" content="Weather app" />
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://weather-ebon-psi.vercel.app/" />
         <meta property="og:title" content="Weather" />
-        <meta property="og:description" content="Weather forecast for training purpose" />
+        <meta property="og:description" content="Weather app" />
         <meta property="og:image" content="/background-grey.jpg" />
 
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://weather-ebon-psi.vercel.app/" />
         <meta property="twitter:title" content="Weather" />
-        <meta property="twitter:description" content="Weather forecast for training purpose" />
+        <meta property="twitter:description" content="Weather app" />
         <meta property="twitter:image" content="/background-grey.jpg" />
+
       </Head>
       <GlobalStyle />
       <main>{children}</main>
