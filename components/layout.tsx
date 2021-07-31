@@ -20,10 +20,13 @@ export default function Layout({ children }: any) {
         <title>Weather</title>
         <meta name="description" content="Weather app" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
 
         <meta name="title" content="Weather" />
         <meta name="description" content="Weather app" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="theme-color" content="#ffffff" />
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://weather-ebon-psi.vercel.app/" />
